@@ -1,22 +1,15 @@
 #include <iostream>
 
-using namespace std;
-
-int main() {
-    
+int main(int argc, char* argv[]) {
+	
     int n;
-    int n0;
-    int n1;
-    int n5;
+	int n1;
+	
+    std::cin >> n;
     
-    cin >> n;
+    n1 = n / 10;
+    n = 100*n1*(n1+1) + 25;
     
-    n0 = n / 10;
-    n5 = n > 5;
-    n1 = n < 6;
-    
-    cout << n5*n0*(n0+1) + n1*"";
-	cout << "25";
-    
+    std::cout << n;
     return 0;
 }
