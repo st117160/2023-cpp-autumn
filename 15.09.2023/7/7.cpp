@@ -3,7 +3,7 @@
 int main(int argc, char *argv[])
 {
 
-    int n;
+    int n = 1;
 
     std::cin >> n;
     std::cout << "The next number for the number ";
