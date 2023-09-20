@@ -1,15 +1,19 @@
 #include <iostream>
 
-int main(int argc, char* argv[]) {
-    
-    int n;
-    int n_positive;
-    int n_negative;
-    
-    std::cin >> n;
-    n_positive = n > 0;
-    n_negative = n < 0;
-    std::cout << ((n_negative*n + n_positive*1) + (n_negative*1 + n_positive*n))*(n_positive*n+n_negative*(-n+2))/2.0;
-    
-    return 0;
+int main(int argc, char *argv[])
+{
+
+    int N = 1;
+    int n_positive = 1;
+    int n_negative = 1;
+    int answer = 1;
+
+    std::cin >> N;
+    n_positive = N > 0;
+    n_negative = N < 0;
+    answer = ((n_negative * N + n_positive * 1) + (n_negative * 1 + n_positive * N)) * (n_positive * N + n_negative * (-N + 2)) / 2.0;
+
+    std::cout << answer;
+
+        return 0;
 }

@@ -1,14 +1,15 @@
 #include <iostream>
 
-int main(int argc, char* argv[]) {
+int main(int argc, char *argv[])
+{
 
-    int a;
-    int b;
+    int A = 1;
+    int B = 1;
 
-    std::cin >> a;
-    std::cin >> b;
+    std::cin >> A;
+    std::cin >> B;
 
-    std::cout << a + b;
+    std::cout << A + B;
 
     return 0;
 }
