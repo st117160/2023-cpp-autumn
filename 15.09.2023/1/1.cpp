@@ -3,13 +3,13 @@
 int main(int argc, char *argv[])
 {
 
-    int A = 1;
-    int B = 1;
+    int a = 1;
+    int b = 1;
 
-    std::cin >> A;
-    std::cin >> B;
+    std::cin >> a;
+    std::cin >> b;
 
-    std::cout << A + B;
+    std::cout << a + b;
 
     return 0;
 }

@@ -3,12 +3,12 @@
 int main(int argc, char *argv[])
 {
 
-    int long long A = 1;
+    int a = 1;
 
-    std::cin >> A;
+    std::cin >> a;
 
-    A = 100 * (A / 10) * ((A / 10) + 1) + 25;
+    a = 100 * (a / 10) * ((a / 10) + 1) + 25;
 
-    std::cout << A;
+    std::cout << a;
     return 0;
 }

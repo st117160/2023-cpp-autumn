@@ -5,18 +5,18 @@ int main(int argc, char *argv[])
 
     int a = 1;
     int b = 1;
-    int a1 = 1;
-    int b1 = 1;
-    int ab = 1;
+    int a_max = 1;
+    int b_max = 1;
+    int equal = 1;
 
     std::cin >> a;
     std::cin >> b;
 
-    a1 = a > b;
-    b1 = b > a;
-    ab = b == a;
+    a_max = a > b;
+    b_max = b > a;
+    equal = b == a;
 
-    std::cout << a * a1 + b * b1 + a * ab;
+    std::cout << a * a_max + b * b_max + a * equal;
 
     return 0;
 }
