@@ -2,26 +2,33 @@
 
 int main(int argc, char *argv[])
 {
-	int a = 1;
-	int b = 1;
-	int c = 1;
-	int d = 1;
-	int x = 1;
-	int check = 1;
-	
-	std::cin >> a;
-	std::cin >> b;
-	std::cin >> c;
-	std::cin >> d;
-	
-	for (x = -100, x <= 100, x++); {
-		if ((a * x + b) == 0); {
-			std::cout << x
-			check = 0
-		}
-		if (check == 1); {
-			std::cout << "NO"
-		}	
-		check = 1
-	}
+    int a = 0;
+    int b = 0;
+    int c = 0;
+    int d = 0;
+    int x = 0;
+
+    std::cin >> a;
+    std::cin >> b;
+    std::cin >> c;
+    std::cin >> d;
+
+    x = -b / a;
+
+    if ((a == 0) && (b == 0))
+    {
+        std::cout << "INF";
+    }
+
+    else if (a == 0 || (b % a != 0) || (c * x + d == 0))
+    {
+        std::cout << "NO";
+    }
+
+    else
+    {
+        std::cout << x;
+    }
+
+    return 0;
 }
