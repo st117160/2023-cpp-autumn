@@ -2,9 +2,9 @@
 
 int main(int argc, char *argv[])
 {
-    int k = 1;
-    int m = 1;
-    int n = 1;
+    int k = 0;
+    int m = 0;
+    int n = 0;
     int cnt = 0;
 	
 	std::cin >> k;
@@ -13,7 +13,7 @@ int main(int argc, char *argv[])
 
     cnt = n / m * k * 2;
     
-    if (n > k) 
+    if (n % k > 0) 
 	{
         if (k / 2 < n % k) 
 		{
