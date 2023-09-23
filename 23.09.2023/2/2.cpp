@@ -45,4 +45,6 @@ int main(int argc, char *argv[])
 			std::cout << "NO";
 		}
 	}
+	
+	return 0;
 }
