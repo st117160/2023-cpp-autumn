@@ -11,7 +11,7 @@ int main(int argc, char *argv[])
     std::cin >> m;
     std::cin >> n;
 
-    cnt = n / m * k * 2;
+    cnt = (n / k) * m * 2;
     
     if (n % k > 0) 
 	{
