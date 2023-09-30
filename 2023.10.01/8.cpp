@@ -2,12 +2,38 @@
 
 int main(int argc, char *argv[])
 {
-	int k = 1001;
+	int a = 0;
+	int b = 0;
+	int n = 0;
+	int x = 0;
+	int gcd = 0;
 	
-	if (std::string k == "1" + "0" + "0" + "1")
+	std::cin >> a;
+	std::cin >> b;
+	std::cin >> n;
+	
+	if (b > a)
 	{
-		std::cout << "DA"
+		x = b;
+		b = a;
+		a = x;	
 	}
+
+	
+	while (a != 0 && b != 0)
+	{
+		if (a > b)
+		{
+			a = a % b;
+		}
+		else
+		{
+			b = b % a;
+		}
+		gcd = a + b;
+	}
+	
+	std::cout << gcd;
 	
 	return 0;
 }
