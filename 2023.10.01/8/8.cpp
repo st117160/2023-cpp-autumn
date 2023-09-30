@@ -33,7 +33,7 @@ int main(int argc, char *argv[])
 		gcd = a + b;
 	}
 	
-	
+	std::cout << gcd;
 	
 	return 0;
 }
