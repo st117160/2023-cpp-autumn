@@ -28,12 +28,10 @@ int main(int argc, char *argv[])
             a1 += n;
         }
         else
-        
         {
             a5 += 1;
         }
     }
-    
     else if (n <= 10)
     {
 
@@ -43,12 +41,10 @@ int main(int argc, char *argv[])
             a1 += (n % 5);
         }
         else
-        
         {
             a10 += 1;
         }
     }
-    
     else if (n <= 20)
     {
         cnt10 = n / 10;
@@ -62,12 +58,10 @@ int main(int argc, char *argv[])
             a1 += cnt1;
         }
         else
-        
         {
             a20 += 1;
         }
     }
-    
     else
     {
         cnt20 = n / 20;
@@ -88,19 +82,16 @@ int main(int argc, char *argv[])
                     a5 += cnt5;
                     a1 += cnt1;
                 }
-                
                 else
                 {
                     a10 += 1;
                 }
             }
-            
             else
             {
                 a20 += 1;
             }
         }
-        
         else
         {
             a60 += 1;

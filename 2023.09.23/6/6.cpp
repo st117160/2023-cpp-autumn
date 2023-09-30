@@ -24,7 +24,8 @@ int main(int argc, char *argv[])
             cnt += m;
         }
     }
-    if (n <= k) {
+    if (n <= k) 
+	{
         cnt = 2 * m;
     }
 

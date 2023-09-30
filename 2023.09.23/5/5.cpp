@@ -12,15 +12,13 @@ int main(int argc, char *argv[])
         std::cout << " ";
         std::cout << "bochka";
     }
-
-    else if ((n % 10 == 2 && n % 100 != 12) || (n % 10 == 3 and n % 100 != 13) || (n % 10 == 4 and n % 100 != 14))
+	else if ((n % 10 == 2 && n % 100 != 12) || (n % 10 == 3 && n % 100 != 13) || (n % 10 == 4 && n % 100 != 14))
     {
         std::cout << n;
         std::cout << " ";
         std::cout << "bochki";
     }
-
-    else
+	else
     {
         std::cout << n;
         std::cout << " ";

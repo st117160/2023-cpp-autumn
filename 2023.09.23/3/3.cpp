@@ -19,13 +19,11 @@ int main(int argc, char *argv[])
     {
         std::cout << "INF";
     }
-
-    else if (a == 0 || (b % a != 0) || (c * x + d == 0))
+	else if (a == 0 || (b % a != 0) || (c * x + d == 0))
     {
         std::cout << "NO";
     }
-
-    else
+	else
     {
         std::cout << x;
     }
