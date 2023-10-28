@@ -48,7 +48,7 @@ int main(int argc, char *argv[])
     }
     else
     {
-        while ('True')
+        while (true)
         {
             ost += a;
             std::cout << ">" << lit;
