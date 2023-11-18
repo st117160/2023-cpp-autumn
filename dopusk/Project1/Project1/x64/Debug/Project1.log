@@ -1,0 +1,3 @@
+﻿  dopusk.cpp
+C:\ДЗ\2023-cpp-autumn\dopusk\Project1\Project1\dopusk.cpp(24,15): warning C4244: аргумент: преобразование "time_t" в "unsigned int", возможна потеря данных
+  Project1.vcxproj -> C:\ДЗ\2023-cpp-autumn\dopusk\Project1\x64\Debug\Project1.exe
