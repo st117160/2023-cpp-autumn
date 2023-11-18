@@ -140,29 +140,31 @@ void InsertionSort(int* a, int len)
 void CountSort(int* a, int len)
 {
     int a1[10];
-    int count_a[10];
+    int cnt[10];
     int x = a[0];
     for (int i = 1; i < len; i++)
     {
         if (a[i] > x)
+        {
             x = a[i];
+        }
     }
     for (int i = 0; i <= x; ++i)
     {
-        count_a[i] = 0;
+        cnt[i] = 0;
     }
     for (int i = 0; i < len; i++)
     {
-        count_a[a[i]]++;
+        cnt[a[i]]++;
     }
     for (int i = 1; i <= x; i++)
     {
-        count_a[i] += count_a[i - 1];
+        cnt[i] += cnt[i - 1];
     }
     for (int i = len - 1; i >= 0; i--)
     {
-        a1[count_a[a[i]] - 1] = a[i];
-        count_a[a[i]]--;
+        a1[cnt[a[i]] - 1] = a[i];
+        cnt[a[i]]--;
     }
     for (int i = 0; i < len; i++)
     {
