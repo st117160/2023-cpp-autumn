@@ -1,41 +1,101 @@
 #include <iostream>
 
-const int MAX_N = 100;
-int adjMatrix[MAX_N][MAX_N]; // Матрица смежности
+class Node
+{
+public:
+    int data;
+    Node* next;
 
-int main() {
-    int N;
-    std::cin >> N;
+    Node(int data) : data(data), next(nullptr)
+    {
+    }
+private:
+    int n;
+    int** matrix;
+};
 
-    // Чтение матрицы смежности
-    for (int i = 0; i < N; ++i) {
-        for (int j = 0; j < N; ++j) {
-            std::cin >> adjMatrix[i][j];
+class CGraph
+{
+public:
+    CGraph() : n(0), matrix(nullptr)
+    {
+    }
+
+    ~CGraph()
+    {
+        if (matrix != nullptr)
+        {
+            for (int i = 0; i < n; ++i)
+            {
+                delete[] matrix[i];
+            }
+            delete[] matrix;
         }
     }
 
-    // Проверка на петли
-    for (int i = 0; i < N; ++i) {
-        if (adjMatrix[i][i] != 0) {
+    void createAdjacencyMatrix();
+    void graphOriented();
+};
+
+void CGraph::createAdjacencyMatrix()
+{
+    std::cin >> n;
+    matrix = new int* [n];
+
+    for (int i = 0; i < n; ++i)
+    {
+        matrix[i] = new int[n];
+        for (int j = 0; j < n; ++j)
+        {
+            std::cin >> matrix[i][j];
+        }
+    }
+}
+
+void CGraph::graphOriented()
+{
+    for (int i = 0; i < n; i++)
+    {
+        if (matrix[i][i] != 0)
+        {
             std::cout << "NO" << std::endl;
-            return 0;
+            return;
         }
     }
 
-    // Проверка на симметричность
-    bool isSymmetric = true;
-    for (int i = 0; i < N; ++i) {
-        for (int j = i + 1; j < N; ++j) {
-            if (adjMatrix[i][j] != adjMatrix[j][i]) {
-                isSymmetric = false;
-                break;
+    for (int i = 0; i < n; i++)
+    {
+        for (int j = i + 1; j < n; j++)
+        {
+            if (matrix[i][j] != matrix[j][i] && matrix[i][j] != 0)
+            {
+                std::cout << "YES" << std::endl;
+                return;
             }
         }
-        if (!isSymmetric) break;
     }
 
-    // Если матрица смежности не симметрична и нет петель, то это ориентированный граф
-    std::cout << (isSymmetric ? "NO" : "YES") << std::endl;
+    std::cout << "NO" << std::endl;
+}
+
+class CGraphSolver : public CGraph
+{
+public:
+    CGraphSolver() : CGraph()
+    {
+    }
+
+    void solve()
+    {
+        createAdjacencyMatrix();
+        graphOriented();
+    }
+};
+
+int main(int argc, char* argv[])
+{
+    GraphSolver graphSolver;
+    graphSolver.solve();
 
     return 0;
 }
