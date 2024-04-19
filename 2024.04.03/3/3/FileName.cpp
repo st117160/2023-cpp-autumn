@@ -10,7 +10,6 @@ public:
 	void readEdges(int edges);
 	void fillMatrix(int vertexes);
 	void printSearchRoads();
-	void PrintMatrix();
 	void trLights(int vertexes);
 	void colorHill(int vertexes);
 	void colorBrige(int vertexes);
@@ -113,18 +112,6 @@ void CGraph::fillMatrix(int vertexes)
 			_matrix[_edgesMatrix[j][1]][_edgesMatrix[j][0]] = 1;
 			_matrix[_edgesMatrix[j][0]][_edgesMatrix[j][1]] = 1;
 		}
-	}
-}
-
-void CGraph::PrintMatrix()
-{
-	for (int i = 0; i < _vertexes; ++i)
-	{
-		for (int j = 0; j < _vertexes; ++j)
-		{
-			std::cout << _matrix[i][j] << " ";
-		}
-		std::cout << std::endl;
 	}
 }
 

@@ -36,10 +36,6 @@ public:
     }
     void PrintMatrix() {
         if (_matrix == nullptr) {
-            if (_edgesMatr == nullptr) {
-                std::cout << "Graph empty" << std::endl;
-                return;
-            }
             fillingMatr(_vertexes);
         }
         for (int i = 0; i < _vertexes; ++i) {
@@ -70,10 +66,6 @@ private:
     void fillingMatr(int vertexes) {
         _vertexes = vertexes + 1;
         createMatr();
-        if (_edgesMatr == nullptr) {
-            std::cout << "Edges matrix is empty" << std::endl;
-            return;
-        }
         for (int i = 0; i < _edges; ++i)
             for (int j = 0; j < 2; ++j) {
                 _matrix[_edgesMatr[i][1]][_edgesMatr[i][0]] = 1;

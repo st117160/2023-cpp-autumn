@@ -10,7 +10,6 @@ public:
 	void readEdges(int edges);
 	void fillMatrix(int vertexes);
 	void printSearchRoads();
-	void PrintMatrix();
 	void trLights(int vertexes);
 
 private:
@@ -44,11 +43,6 @@ CGraph::~CGraph()
 
 void CGraph::createMatrix()
 {
-	if (_vertexes == 0)
-	{
-		return;
-	}
-
 	_matrix = new int* [_vertexes];
 	for (int i = 0; i < _vertexes; i++)
 	{
@@ -58,11 +52,6 @@ void CGraph::createMatrix()
 
 void CGraph::createEdges()
 {
-	if (_edges == 0)
-	{
-		return;
-	}
-
 	_edgesMatr = new int* [_edges];
 	for (int i = 0; i < _edges; i++)
 	{
@@ -109,27 +98,6 @@ void CGraph::fillMatrix(int vertexes)
 			_matrix[_edgesMatr[j][1]][_edgesMatr[j][0]] = 1;
 			_matrix[_edgesMatr[j][0]][_edgesMatr[j][1]] = 1;
 		}
-	}
-}
-
-void CGraph::PrintMatrix()
-{
-	if (_matrix == nullptr)
-	{
-		if (_edgesMatr == nullptr)
-		{
-			std::cout << "Graph empty" << std::endl;
-			return;
-		}
-		fillMatrix(_vertexes);
-	}
-	for (int i = 1; i < _vertexes; ++i)
-	{
-		for (int j = 1; j < _vertexes; ++j)
-		{
-			std::cout << _matrix[i][j] << " ";
-		}
-		std::cout << std::endl;
 	}
 }
 

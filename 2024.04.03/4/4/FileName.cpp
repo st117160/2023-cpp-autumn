@@ -10,10 +10,6 @@ public:
 	void readEdges(int edges);
 	void fillMatrix(int vertexes);
 	void printSearchRoads();
-	void PrintMatrix();
-	void trLights(int vertexes);
-	void colorHill(int vertexes);
-	void colorBrige(int vertexes);
 	void travelRing(int vertexes);
 
 private:
@@ -58,18 +54,6 @@ void CGraph::createMatrix()
 	for (int i = 0; i < _vertexes; i++)
 	{
 		_matrix[i] = new int[_vertexes] { 0 };
-	}
-}
-
-void CGraph::PrintMatrix()
-{
-	for (int i = 0; i < _vertexes; ++i)
-	{
-		for (int j = 0; j < _vertexes; ++j)
-		{
-			std::cout << _matrix[i][j] << " ";
-		}
-		std::cout << std::endl;
 	}
 }
 
@@ -127,68 +111,6 @@ void CGraph::fillMatrix(int vertexes)
 			_matrix[_edgesMatrix[i][0]][_edgesMatrix[i][1]] = 1;
 		}
 	}
-}
-
-void CGraph::trLights(int vertexes)
-{
-	_vertexes = vertexes;
-	for (int q = 1; q <= _vertexes; q++)
-	{
-		int sumEdges = 0;
-		for (int i = 0; i < _edges; ++i)
-		{
-
-			for (int j = 0; j < 2; ++j)
-			{
-				if (_edgesMatrix[i][j] == q)
-				{
-					++sumEdges;
-				}
-			}
-		}
-		std::cout << sumEdges << " ";
-	}
-
-}
-
-void CGraph::colorHill(int vertexes)
-{
-	_vertexes = vertexes;
-	_arrColors = new int[_vertexes] { 0 };
-	for (int i = 0; i < _vertexes; i++)
-	{
-		std::cin >> _arrColors[i];
-	}
-	std::cout << std::endl;
-}
-
-void CGraph::colorBrige(int vertexes)
-{
-	int cnt = 0;
-
-	_vertexes = vertexes;
-	for (int i = 0; i < _vertexes; i++)
-	{
-		for (int j = 0; j < _vertexes; j++)
-		{
-			if (_matrix[i][j] == 1)
-			{
-				_matrix[i][j] = _arrColors[i];
-			}
-		}
-	}
-	for (int i = 0; i < _vertexes; i++)
-	{
-		for (int j = 0; j < _vertexes; j++)
-		{
-			if (_matrix[i][j] != _matrix[j][i])
-			{
-				++cnt;
-			}
-		}
-	}
-
-	std::cout << cnt / 2;
 }
 
 void CGraph::travelRing(int vertexes)
